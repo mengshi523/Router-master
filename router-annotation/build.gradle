@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+apply plugin: 'bintray-release'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+publish {
+    artifactId = 'router-annotation'
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+//    uploadName = rootProject.uploadName
+    uploadName = artifactId
+    publishVersion = rootProject.publishVersion
+    desc = rootProject.description
+    website = rootProject.website
+    licences = rootProject.licences
+}

@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+apply plugin: 'bintray-release'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.google.auto.service:auto-service:1.0-rc3'
+    compile 'com.squareup:javapoet:1.8.0'
+    compile 'com.baronzhang.android:router-annotation:0.2.3'
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+publish {
+    artifactId = 'router-compiler'
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+//    uploadName = rootProject.uploadName
+    uploadName = artifactId
+    publishVersion = rootProject.publishVersion
+    desc = rootProject.description
+    website = rootProject.website
+    licences = rootProject.licences
+}
